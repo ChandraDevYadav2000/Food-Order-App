@@ -8,6 +8,12 @@ const nextConfig = {
                 hostname:'ap-south-1.graphassets.com',
                 port:'',
                 pathname:'/**'
+            },
+            {
+                protocol:'https',
+                hostname:'img.clerk.com',
+                port:'',
+                pathname:'/**'
             }
         ]
     }

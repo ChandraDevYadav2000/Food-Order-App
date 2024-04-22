@@ -15,6 +15,7 @@ function CategoryList() {
 
   useEffect(()=>{
     setSelectedCategory(params.get('category'));
+    console.log(params.get('category'));
   },[params])
 
     useEffect(()=>{
@@ -55,7 +56,7 @@ function CategoryList() {
     <div className='mt-10 relative'>
       <div className='flex gap-4 overflow-auto scrollbar-hide' ref={listRef}>
       {categoryList&&categoryList.map((category,index)=>(
-        <Link href={`?category=`+category.slug} key={index} className={`flex flex-col items-center gap-2 border p-3 rounded-lg min-w-28 hover:border-blue-800 hover:bg-purple-200 cursor-pointer group ${selectedCategory==category.slug&&'text-purple-800 border-purple-950 bg-orange-200'}`}>
+        <Link href={'?category='+category.slug} key={index} className={`flex flex-col items-center gap-2 border p-3 rounded-lg min-w-28 hover:border-blue-800 hover:bg-purple-200 cursor-pointer group ${selectedCategory==category.slug&&'text-purple-800 border-purple-950 bg-orange-200'}`}>
           <Image src={category.icon?.url} alt={category.name} width={40} height={40} className='group-hover:scale-125 transition-all duration-200'/>
           <h2 className='text-sm font-semibold group-hover:text-purple-800'>{category.name}</h2>
         </Link>
